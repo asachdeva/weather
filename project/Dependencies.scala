@@ -5,6 +5,8 @@ object Dependencies {
   object Versions {
     val circe = "0.13.0"
     val fs2 = "3.0.1"
+        val http4s       = "0.21.22"
+    val pureconfig   = "0.14.1"
 
     // Test
 
@@ -19,13 +21,21 @@ object Dependencies {
   object Libraries {
     def circe(artifact: String, version: String): ModuleID = "io.circe" %% artifact % version
     def fs2(artifact: String, version: String): ModuleID = "co.fs2" %% artifact % version
-
+      def http4s(artifact: String, version: String): ModuleID      = "org.http4s"                   %% artifact % version
+    
+  lazy val circeCore            = circe("circe-core", Versions.circe)
+  lazy val circeFs2             = circe("circe-parser", Versions.circe)
+  lazy val circeGeneric         = circe("circe-generic", Versions.circe)
+    lazy val circeLiteral       = circe("circe-literal", Versions.circe)
+  lazy val circeOptics          = circe("circe-optics", Versions.circe)
+  lazy val circeParser          = circe("circe-fs2", Versions.circe)
     lazy val fs2Core = fs2("fs2-core", Versions.fs2)
     lazy val fs2IO = fs2("fs2-io", Versions.fs2)
-    lazy val circeCore = circe("circe-core", Versions.circe)
-    lazy val circeParser = circe("circe-parser", Versions.circe)
-    lazy val circeGeneric = circe("circe-generic", Versions.circe)
-
+      lazy val http4sCirce          = http4s("http4s-circe", Versions.http4s)
+  lazy val http4sDSL            = http4s("http4s-dsl", Versions.http4s)
+  lazy val http4sServer         = http4s("http4s-blaze-server", Versions.http4s)
+    lazy val pureconfig           = "com.github.pureconfig"      %% "pureconfig"     % Versions.pureconfig
+    
     // Compiler
     lazy val kindProjector = ("org.typelevel" %% "kind-projector" % Versions.kindProjector).cross(CrossVersion.full)
     lazy val betterMonadicFor = "com.olegpy" %% "better-monadic-for" % Versions.betterMonadicFor
