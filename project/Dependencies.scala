@@ -7,6 +7,7 @@ object Dependencies {
     val fs2 = "3.0.1"
         val http4s       = "0.21.22"
     val pureconfig   = "0.14.1"
+      val rho                  = "0.21.0"
 
     // Test
 
@@ -34,7 +35,10 @@ object Dependencies {
       lazy val http4sCirce          = http4s("http4s-circe", Versions.http4s)
   lazy val http4sDSL            = http4s("http4s-dsl", Versions.http4s)
   lazy val http4sServer         = http4s("http4s-blaze-server", Versions.http4s)
+      lazy val http4sRho            = http4s("rho-swagger", Versions.rho)
+  lazy val http4sServer         = http4s("rho-swagger-uir", Versions.rho)
     lazy val pureconfig           = "com.github.pureconfig"      %% "pureconfig"     % Versions.pureconfig
+
     
     // Compiler
     lazy val kindProjector = ("org.typelevel" %% "kind-projector" % Versions.kindProjector).cross(CrossVersion.full)
