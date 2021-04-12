@@ -2,7 +2,7 @@ import com.scalapenos.sbt.prompt.SbtPrompt.autoImport._
 import com.scalapenos.sbt.prompt._
 import Dependencies._
 
-name := """fs2_launch"""
+name := """weather"""
 
 val format = taskKey[Unit]("Format files using scalafmt")
 
@@ -49,4 +49,4 @@ lazy val `weather` = project
   )
 
 // CI build
-addCommandAlias("buildweather", ";clean;+test;")
+addCommandAlias("buildWeather", ";clean;+test;")
