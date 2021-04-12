@@ -1,4 +1,4 @@
-{ jdk ? "jdk15" }:
+{ jdk ? "graalvm11-ce" }:
 
 let
   java = pkgs.${jdk};
